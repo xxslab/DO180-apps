@@ -1,0 +1,16 @@
+protocol: TCP
+readinessProbe:
+httpGet:
+path: /healthz
+port: 8080
+env:
+- name: DB_HOST
+value: database.console-apps.svc.cluster.local
+- name: DB_PORT
+value: '5432'
+- name: DB_USER
+value: postgres
+- name: DB_PASSWORD
+value: postgres
+- name: DB_NAME
+value: postgres
